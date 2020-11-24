@@ -1,6 +1,6 @@
 
 # Image URL to use all building/pushing image targets
-IMG ?= kubespheredev/elasticsearch-curator:latest
+IMG ?= kubespheredev/elasticsearch-curator:v5.7.6
 AMD64 ?= -amd64
 ARM64 ?= -arm64
 
