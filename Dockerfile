@@ -1,7 +1,9 @@
-FROM python:3.6-alpine3.6
+FROM debian:unstable-slim as builder
+COPY install-curator.sh /
 
-RUN pip install elasticsearch-curator && \
-    mkdir /curator && \
-    cp /usr/local/bin/curator /curator/curator
+RUN bash /install-curator.sh
+
+ENV LC_ALL=C.UTF-8
+ENV LANG=C.UTF-8
 
 ENTRYPOINT ["/curator/curator"]
